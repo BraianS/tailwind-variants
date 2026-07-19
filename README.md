@@ -188,4 +188,4 @@ Please adhere to this project's [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md).
 
 ## License
 
-Licensed under the [MIT License](./LICENSE.md).
+Licensed under the [MIT License](./LICENSE).
