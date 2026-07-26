@@ -5,7 +5,7 @@ Welcome, and thanks for your interest in contributing! Please take a moment to r
 ## Style Guide
 
 - **Commits** follow the ["Conventional Commits" specification](https://www.conventionalcommits.org/en/v1.0.0/). This allows for changelogs to be generated automatically upon release.
-- **Code** is formatted via [Prettier](https://prettier.io/)
+- **Code** is formatted and linted with [Biome](https://biomejs.dev/).
 - **JavaScript** is written as [TypeScript](https://www.typescriptlang.org/) where possible.
 
 ## Getting Started
@@ -24,8 +24,35 @@ Welcome, and thanks for your interest in contributing! Please take a moment to r
 ### Scripts
 
 - `pnpm build` – production build
-- `pnpm check` – type checks
-- `pnpm test` – runs jest, watching for file changes
+- `pnpm typecheck` – type checks
+- `pnpm lint` – checks formatting and lint rules
+- `pnpm lint:fix` – applies safe formatting and lint fixes
+- `pnpm test` – runs the Vitest unit test suite
+- `pnpm test:watch` – runs Vitest in watch mode
+- `pnpm benchmark` – compares runtime performance with the latest released version and CVA
+
+### Benchmark Requirements
+
+Changes to runtime code, benchmark workloads, build output, or runtime dependencies must run the
+full `pnpm benchmark` suite. The `--quick` option is only for smoke testing and must not be used to
+support performance claims.
+
+Benchmarks must remain comparable and performance changes must be controlled:
+
+- Use the latest released `tailwind-variants` package reported by the suite as the primary baseline.
+- Keep workload behavior equivalent across implementations; correctness assertions must pass
+  before measurements are considered valid.
+- Treat differences within ±5% as noise. Re-run larger differences on the same machine before
+  classifying them as improvements or regressions.
+- Do not change workloads, setup boundaries, iteration units, or merge behavior solely to improve
+  reported numbers.
+- Avoid confirmed regressions above 5%. When a regression is an intentional trade-off, keep it
+  bounded and document the affected scenario, relative delta, absolute throughput, reason, and
+  expected real-world impact in the pull request.
+- Include the benchmark summary in the pull request and confirm that no regression is unexplained.
+
+See the [benchmark methodology](./benchmark/README.md) for scenario definitions and measurement
+rules.
 
 ### Commit Convention
 

@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -23,7 +23,7 @@ jobs:
         id: run_commitlint
         uses: wagoid/commitlint-github-action@v6
         with:
-          configFile: .commitlintrc.mjs
+          configFile: .config/commitlint.config.ts
         env:
           NODE_PATH: ${{ github.workspace }}/node_modules
 
