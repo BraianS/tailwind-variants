@@ -1,3 +1,11 @@
+## [3.3.1](https://github.com/heroui-inc/tailwind-variants/compare/v3.3.0...v3.3.1) (2026-08-03)
+
+### Bug Fixes
+
+* slots shared-state contamination ([#305](https://github.com/heroui-inc/tailwind-variants/issues/305)) ([8b7f0b6](https://github.com/heroui-inc/tailwind-variants/commit/8b7f0b664026ffadd5542cf509e79424cdacc93c))
+
+# [3.3.0](https://github.com/heroui-inc/tailwind-variants/compare/v3.2.2...v3.3.0) (2026-07-26)
+
 ## [3.2.2](https://github.com/heroui-inc/tailwind-variants/compare/v3.2.1...v3.2.2) (2025-11-22)
 
 
@@ -104,4 +112,4 @@ All notable changes to this project will be documented in this file. See [standa
 * Cached regex patterns
 * Streamlined string operations
 
-For migration instructions, see [MIGRATION-V2.md](./MIGRATION-V2.md)
+For migration instructions, see the [v2 migration guide](./.docs/migrations/v1-to-v2.md).
