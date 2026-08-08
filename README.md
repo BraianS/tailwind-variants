@@ -201,4 +201,4 @@ Contributions are always welcome!
 
 ## License
 
-Licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](./LICENSE).
